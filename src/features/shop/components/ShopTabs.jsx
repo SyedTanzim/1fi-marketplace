@@ -1,23 +1,12 @@
-import type { ShopTab } from "../shop";
-
 /**
  * Keeps ownership of the active Shop section in the page so tab navigation
  * and rendered content cannot drift into separate states.
  */
-export interface ShopTabsProps {
-  activeTab: ShopTab;
-  onTabChange: (tab: ShopTab) => void;
-}
-
-/**
- * Keeps labels and state values paired in one typed source so adding the
- * Marketplace tab cannot introduce mismatched navigation values.
- */
-export const SHOP_TABS = [
+const SHOP_TABS = [
   { value: "top-brands", label: "Top Brands" },
   { value: "nearby-stores", label: "Nearby Stores" },
   { value: "marketplace", label: "1Fi Marketplace" },
-] satisfies ReadonlyArray<{ value: ShopTab; label: string }>;
+];
 
 /**
  * Uses a controlled tab list so the selected visual state and the Shop page's
@@ -26,7 +15,7 @@ export const SHOP_TABS = [
 export function ShopTabs({
   activeTab,
   onTabChange,
-}: ShopTabsProps) {
+}) {
   return (
     <div
       aria-label="Shop sections"

@@ -1,20 +1,10 @@
-import type { MarketplaceProduct } from "../types/marketplace";
 import { formatMoney } from "../utils/formatMoney";
 
 /**
  * Keeps product cards presentation-only by letting their parent own navigation
  * and identify selections through stable product IDs.
  */
-export interface ProductCardProps {
-  product: MarketplaceProduct;
-  onSelect: (productId: MarketplaceProduct["id"]) => void;
-}
-
-/**
- * Reuses the existing 1Fi list-card language so Marketplace products feel
- * native to Shop while remaining entirely driven by external product data.
- */
-export function ProductCard({ product, onSelect }: ProductCardProps) {
+export function ProductCard({ product, onSelect }) {
   let lowestEmiPlan = product.emiPlans[0];
 
   for (const emiPlan of product.emiPlans) {

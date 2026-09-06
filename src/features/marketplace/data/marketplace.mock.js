@@ -1,5 +1,3 @@
-import type { MarketplaceProduct } from "../types/marketplace";
-
 export const MOCK_MARKETPLACE_PRODUCTS = [
   {
     id: "iphone-16",
@@ -124,4 +122,4 @@ export const MOCK_MARKETPLACE_PRODUCTS = [
       { label: "Warranty", value: "1 year" },
     ],
   },
-] satisfies MarketplaceProduct[];
+];
