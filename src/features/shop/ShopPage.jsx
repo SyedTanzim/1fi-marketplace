@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-import { BottomNav } from "../../components/layout/BottomNav";
+import shopBanner from "../../assets/shop-banner.webp";
+import { BottomNav } from "../../components/BottomNav";
 import { Marketplace } from "../marketplace/components/Marketplace";
 import { ShopTabs } from "./components/ShopTabs";
 
@@ -13,7 +13,13 @@ export function ShopPage({ onProceed }) {
 
   return (
     <div className="mx-auto min-h-screen max-w-[500px] bg-white">
-      <main className="px-4 py-4 pb-[calc(5rem+env(safe-area-inset-bottom))]">
+      <img
+        alt="Shop today, pay later using mutual funds"
+        className="aspect-[3/2] w-full object-cover"
+        src={shopBanner}
+      />
+
+      <main className="relative -mt-[34px] px-4 pb-[calc(5rem+env(safe-area-inset-bottom))]">
         <ShopTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
         <div className="mt-4">
