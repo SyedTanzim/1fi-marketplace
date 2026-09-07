@@ -30,11 +30,10 @@ export function ShopTabs({
             key={tab.value}
             aria-controls={`${tab.value}-panel`}
             aria-selected={isActive}
-            className={`relative min-w-0 whitespace-nowrap rounded-full px-[10px] py-[10px] text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
-  isActive
-    ? "bg-white text-brand shadow-[0_1px_3px_rgba(20,14,50,0.10),0_0_0_1px_rgba(113,44,220,0.08)]"
-    : "text-gray-500"
-}`}
+            className={`relative min-w-0 whitespace-nowrap rounded-full px-[10px] py-[10px] text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${isActive
+                ? "bg-white text-brand shadow-[0_1px_3px_rgba(20,14,50,0.10),0_0_0_1px_rgba(113,44,220,0.08)]"
+                : "text-gray-500"
+              }`}
             id={`${tab.value}-tab`}
             role="tab"
             type="button"
