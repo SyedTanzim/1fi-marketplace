@@ -55,7 +55,7 @@ export function BottomNav({ activeItem = "shop", onNavigate = () => {} }) {
 
               <Icon
                 aria-hidden="true"
-                className={`relative h-[22px] w-[22px] transition-transform duration-200 group-active:scale-90 ${
+                className={`relative h-[22px] w-[22px] cursor-pointer transition-transform duration-200 group-active:scale-90 ${
                   isActive ? "drop-shadow-[0_0_6px_rgba(113,44,220,0.3)]" : ""
                 }`}
                 strokeWidth={isActive ? 2 : 1.75}
