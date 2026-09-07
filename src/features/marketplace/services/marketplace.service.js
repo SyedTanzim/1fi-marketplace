@@ -11,5 +11,11 @@ function wait(milliseconds) {
 export async function getMarketplaceProducts() {
   await wait(600);
 
+  await wait(200);
+
+  if (Math.random() < 0.05) {
+    throw new Error("Unable to load marketplace products. Please try again.");
+  }
+
   return structuredClone(MOCK_MARKETPLACE_PRODUCTS);
 }
