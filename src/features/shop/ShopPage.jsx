@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { SearchBar } from "../../components/SearchBar";
 import shopBanner from "../../assets/shop-banner.webp";
 import { BottomNav } from "../../components/BottomNav";
 import { Marketplace } from "../marketplace/components/Marketplace";
@@ -11,6 +11,8 @@ import { ShopTabs } from "./components/ShopTabs";
  */
 export function ShopPage({ onProceed }) {
   const [activeTab, setActiveTab] = useState("marketplace");
+  const [topBrandsSearchQuery, setTopBrandsSearchQuery] = useState("");
+  const [nearbyStoresSearchQuery, setNearbyStoresSearchQuery] = useState("");
 
   return (
     <div className="mx-auto min-h-screen max-w-[500px] bg-[#F6F6F6]">
@@ -27,9 +29,16 @@ export function ShopPage({ onProceed }) {
           {activeTab === "top-brands" ? (
             <section
               aria-labelledby="top-brands-tab"
+              className="flex flex-col gap-4"
               id="top-brands-panel"
               role="tabpanel"
             >
+              <SearchBar
+                label="Search top brands"
+                placeholder="  Search Top Brands..."
+                value={topBrandsSearchQuery}
+                onChange={setTopBrandsSearchQuery}
+              />
               <h1 className="text-[20px] font-semibold leading-[1.2] tracking-[-0.018em] text-gray-900">
                 Top Brands
               </h1>
@@ -39,9 +48,16 @@ export function ShopPage({ onProceed }) {
           {activeTab === "nearby-stores" ? (
             <section
               aria-labelledby="nearby-stores-tab"
+              className="flex flex-col gap-4"
               id="nearby-stores-panel"
               role="tabpanel"
             >
+              <SearchBar
+                label="Search top brands"
+                placeholder="  Search Top Brands..."
+                value={topBrandsSearchQuery}
+                onChange={setTopBrandsSearchQuery}
+              />
               <h1 className="text-[20px] font-semibold leading-[1.2] tracking-[-0.018em] text-gray-900">
                 Nearby Stores
               </h1>

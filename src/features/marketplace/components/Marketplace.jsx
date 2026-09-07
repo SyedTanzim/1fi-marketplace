@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { SearchBar } from "../../../components/SearchBar";
 
 import { useMarketplaceProducts } from "../hooks/useMarketplaceProducts";
 import { MarketplaceError } from "./MarketplaceError";
@@ -46,20 +46,12 @@ export function Marketplace({ onProceed }) {
 
     return (
         <section aria-labelledby="marketplace-title" className="flex flex-col gap-4">
-            <div className="flex h-[46px] items-center gap-[10px] rounded-full border border-zinc-200 bg-white px-4">
-                <Search
-                    aria-hidden="true"
-                    className="h-[17px] w-[17px] shrink-0 text-gray-400"
-                />
-                <input
-                    aria-label="Search Marketplace products"
-                    className="min-w-0 flex-1 bg-transparent text-[13px] leading-[1.45] text-gray-900 outline-none placeholder:text-gray-400"
-                    placeholder="  Search Marketplace..."
-                    type="search"
-                    value={searchQuery}
-                    onChange={(event) => setSearchQuery(event.target.value)}
-                />
-            </div>
+            <SearchBar
+                label="Search Marketplace products"
+                placeholder="  Search Marketplace..."
+                value={searchQuery}
+                onChange={setSearchQuery}
+            />
 
             <h2
                 className="text-[20px] font-semibold leading-[1.2] tracking-[-0.018em] text-gray-900"
