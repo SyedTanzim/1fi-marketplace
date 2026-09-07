@@ -59,71 +59,6 @@ export function ProductDetails({ product, onBack, onProceed }) {
             </h1>
           </header>
 
-          <div className="mt-7 flex items-start gap-3">
-            <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center overflow-hidden rounded-xl border border-zinc-200 bg-white">
-              <Store
-                aria-hidden="true"
-                className="h-[25px] w-[25px] text-brand"
-                strokeWidth={2}
-              />
-            </div>
-
-            <div className="min-w-0 flex-1 pt-0.5">
-              <h2 className="text-[18px] font-bold leading-[1.2] text-gray-950">
-                {pickupLocation.name}
-              </h2>
-
-              <p className="mt-2 flex gap-1.5 text-[12px] leading-[1.45] text-slate-400">
-                <MapPin
-                  aria-hidden="true"
-                  className="mt-[1px] h-[14px] w-[14px] shrink-0 text-brand"
-                  strokeWidth={2}
-                />
-                <span>{pickupLocation.address}</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-5 border-y border-zinc-200 py-4">
-            <div className="grid grid-cols-3 text-brand">
-              <button
-                className="flex items-center justify-center gap-2 text-[13px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-                type="button"
-              >
-                <Navigation
-                  aria-hidden="true"
-                  className="h-[16px] w-[16px]"
-                  strokeWidth={1.8}
-                />
-                Navigate
-              </button>
-
-              <button
-                className="flex items-center justify-center gap-2 border-x border-zinc-200 text-[13px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-                type="button"
-              >
-                <Phone
-                  aria-hidden="true"
-                  className="h-[16px] w-[16px]"
-                  strokeWidth={1.8}
-                />
-                Call
-              </button>
-
-              <button
-                className="flex items-center justify-center gap-2 text-[13px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-                type="button"
-              >
-                <Share2
-                  aria-hidden="true"
-                  className="h-[16px] w-[16px]"
-                  strokeWidth={1.8}
-                />
-                Share
-              </button>
-            </div>
-          </div>
-
           <div className="mt-7">
             <div className="overflow-hidden rounded-[18px] border border-zinc-200 bg-white shadow-[0_2px_6px_rgba(20,14,50,0.04)]">
               <img
@@ -141,11 +76,29 @@ export function ProductDetails({ product, onBack, onProceed }) {
               <p className="mt-3 text-[20px] font-bold leading-[1.25] text-gray-900">
                 {formatMoney(selectedVariant?.price ?? product.startingPrice)}
               </p>
-
-              <p className="mx-auto mt-3 max-w-[320px] text-[13px] leading-[1.45] text-slate-500">
-                {product.description}
-              </p>
             </div>
+          </div>
+
+          <div className="mt-7 rounded-[18px] border border-zinc-200 bg-white p-3.5 shadow-[0_2px_6px_rgba(20,14,50,0.04)]">
+            <h2 className="text-[15.5px] font-bold leading-[1.25] tracking-[-0.012em] text-gray-900">
+              Product information
+            </h2>
+
+            <dl className="mt-3">
+              {product.details.map((detail) => (
+                <div
+                  key={detail.label}
+                  className="flex justify-between gap-3 border-b border-zinc-200 py-3 last:border-0"
+                >
+                  <dt className="text-[13px] leading-[1.45] text-gray-500">
+                    {detail.label}
+                  </dt>
+                  <dd className="text-right text-[13px] leading-[1.45] text-gray-900">
+                    {detail.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <div className="mt-7 rounded-[18px] border border-zinc-200 bg-white p-4 shadow-[0_2px_6px_rgba(20,14,50,0.04)]">
@@ -204,6 +157,46 @@ export function ProductDetails({ product, onBack, onProceed }) {
             </div>
           </div>
 
+          <div className="mt-5 border-y border-zinc-200 py-4">
+            <div className="grid grid-cols-3 text-brand">
+              <button
+                className="flex items-center justify-center gap-2 text-[13px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                type="button"
+              >
+                <Navigation
+                  aria-hidden="true"
+                  className="h-[16px] w-[16px]"
+                  strokeWidth={1.8}
+                />
+                Navigate
+              </button>
+
+              <button
+                className="flex items-center justify-center gap-2 border-x border-zinc-200 text-[13px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                type="button"
+              >
+                <Phone
+                  aria-hidden="true"
+                  className="h-[16px] w-[16px]"
+                  strokeWidth={1.8}
+                />
+                Call
+              </button>
+
+              <button
+                className="flex items-center justify-center gap-2 text-[13px] font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                type="button"
+              >
+                <Share2
+                  aria-hidden="true"
+                  className="h-[16px] w-[16px]"
+                  strokeWidth={1.8}
+                />
+                Share
+              </button>
+            </div>
+          </div>
+
           <div className="mt-7 flex flex-col gap-6">
             <VariantSelector
               variants={product.variants}
@@ -216,28 +209,6 @@ export function ProductDetails({ product, onBack, onProceed }) {
               selectedPlanId={selectedEmiPlan?.id ?? null}
               onSelect={selectEmiPlan}
             />
-
-            <div className="rounded-[18px] border border-zinc-200 bg-white p-3.5 shadow-[0_2px_6px_rgba(20,14,50,0.04)]">
-              <h2 className="text-[15.5px] font-bold leading-[1.25] tracking-[-0.012em] text-gray-900">
-                Product information
-              </h2>
-
-              <dl className="mt-3">
-                {product.details.map((detail) => (
-                  <div
-                    key={detail.label}
-                    className="flex justify-between gap-3 border-b border-zinc-200 py-3 last:border-0"
-                  >
-                    <dt className="text-[13px] leading-[1.45] text-gray-500">
-                      {detail.label}
-                    </dt>
-                    <dd className="text-right text-[13px] leading-[1.45] text-gray-900">
-                      {detail.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
           </div>
         </div>
 
