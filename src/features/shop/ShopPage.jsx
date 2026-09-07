@@ -10,7 +10,7 @@ import { ShopTabs } from "./components/ShopTabs";
  * the persistent navigation frame remain synchronized and accessible.
  */
 export function ShopPage({ onProceed }) {
-  const [activeTab, setActiveTab] = useState("top-brands");
+  const [activeTab, setActiveTab] = useState("marketplace");
 
   return (
     <div className="mx-auto min-h-screen max-w-[500px] bg-[#F6F6F6]">
