@@ -1,8 +1,8 @@
 import { formatMoney } from "../utils/formatMoney";
 
 /**
- * Keeps product cards presentation-only by letting their parent own navigation
- * and identify selections through stable product IDs.
+ * Reuses the existing 1Fi list-card language so Marketplace products feel
+ * native to Shop while remaining entirely driven by external product data.
  */
 export function ProductCard({ product, onSelect }) {
   let lowestEmiPlan = product.emiPlans[0];
@@ -36,7 +36,7 @@ export function ProductCard({ product, onSelect }) {
         <h3 className="truncate text-[15.5px] font-bold leading-[1.25] tracking-[-0.012em] text-gray-900">
           {product.name}
         </h3>
-        <p className="mt-1 line-clamp-2 text-[13px] leading-[1.45] text-gray-500">
+        <p className="mt-1 line-clamp-1 text-[13px] leading-[1.45] text-gray-500">
           {product.description}
         </p>
         <div className="mt-2 flex items-end justify-between gap-3">
@@ -53,3 +53,4 @@ export function ProductCard({ product, onSelect }) {
     </button>
   );
 }
+

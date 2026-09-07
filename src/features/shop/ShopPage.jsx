@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import shopBanner from "../../assets/shop-banner.webp";
 import { BottomNav } from "../../components/BottomNav";
 import { Marketplace } from "../marketplace/components/Marketplace";
@@ -12,14 +13,14 @@ export function ShopPage({ onProceed }) {
   const [activeTab, setActiveTab] = useState("top-brands");
 
   return (
-    <div className="mx-auto min-h-screen max-w-[500px] bg-white">
+    <div className="mx-auto min-h-screen max-w-[500px] bg-[#F6F6F6]">
       <img
         alt="Shop today, pay later using mutual funds"
-        className="aspect-[3/2] w-full object-cover"
+        className="aspect-[25/16] w-full object-cover min-[532px]:relative min-[532px]:-left-4 min-[532px]:w-[calc(100%+2rem)] min-[532px]:max-w-none"
         src={shopBanner}
       />
 
-      <main className="relative -mt-[34px] px-4 pb-[calc(5rem+env(safe-area-inset-bottom))]">
+      <main className="relative -mt-7 px-5 pb-[calc(5rem+env(safe-area-inset-bottom))]">
         <ShopTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
         <div className="mt-4">

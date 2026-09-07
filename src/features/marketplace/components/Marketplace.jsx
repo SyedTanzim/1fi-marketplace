@@ -48,7 +48,7 @@ export function Marketplace({ onProceed }) {
         <input
           aria-label="Search Marketplace products"
           className="min-w-0 flex-1 bg-transparent text-[13px] leading-[1.45] text-gray-900 outline-none placeholder:text-gray-400"
-          placeholder="Search products..."
+          placeholder="  Search Marketplace..."
           type="search"
           value={searchQuery}
           onChange={(event) => setSearchQuery(event.target.value)}
@@ -59,7 +59,7 @@ export function Marketplace({ onProceed }) {
         className="text-[20px] font-semibold leading-[1.2] tracking-[-0.018em] text-gray-900"
         id="marketplace-title"
       >
-        1Fi Marketplace
+        Marketplace
       </h2>
 
       {filteredProducts.length > 0 ? (

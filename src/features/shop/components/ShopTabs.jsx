@@ -1,11 +1,11 @@
 /**
- * Keeps ownership of the active Shop section in the page so tab navigation
- * and rendered content cannot drift into separate states.
+ * Keeps labels and state values paired in one typed source so adding the
+ * Marketplace tab cannot introduce mismatched navigation values.
  */
-const SHOP_TABS = [
+export const SHOP_TABS = [
   { value: "top-brands", label: "Top Brands" },
   { value: "nearby-stores", label: "Nearby Stores" },
-  { value: "marketplace", label: "1Fi Marketplace" },
+  { value: "marketplace", label: "Marketplace" },
 ];
 
 /**
@@ -19,7 +19,7 @@ export function ShopTabs({
   return (
     <div
       aria-label="Shop sections"
-      className="flex gap-2 rounded-full border border-[#ece5ff] bg-[#f5f0ff] p-1.5 shadow-[0_1px_3px_rgba(113,44,220,0.06)]"
+      className="grid grid-cols-3 rounded-full border border-[#ece5ff] bg-[#f5f0ff] p-1.5 shadow-[0_1px_3px_rgba(113,44,220,0.06)]"
       role="tablist"
     >
       {SHOP_TABS.map((tab) => {
@@ -30,11 +30,11 @@ export function ShopTabs({
             key={tab.value}
             aria-controls={`${tab.value}-panel`}
             aria-selected={isActive}
-            className={`relative flex-1 rounded-full px-2 py-3 text-sm font-semibold tracking-[-0.005em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC] ${
-              isActive
-                ? "bg-white text-[#712CDC] shadow-[0_1px_3px_rgba(20,14,50,0.10),0_0_0_1px_rgba(113,44,220,0.08)]"
-                : "text-gray-500"
-            }`}
+            className={`relative min-w-0 whitespace-nowrap rounded-full px-[10px] py-[10px] text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC] ${
+  isActive
+    ? "bg-white text-[#712CDC] shadow-[0_1px_3px_rgba(20,14,50,0.10),0_0_0_1px_rgba(113,44,220,0.08)]"
+    : "text-gray-500"
+}`}
             id={`${tab.value}-tab`}
             role="tab"
             type="button"
