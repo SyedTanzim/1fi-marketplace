@@ -32,8 +32,8 @@ export function BottomNav({ activeItem = "shop", onNavigate = () => {} }) {
           <button
             key={item.value}
             aria-current={isActive ? "page" : undefined}
-            className={`relative flex flex-1 flex-col items-center justify-center gap-1 rounded-[18px] py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC] ${
-              isActive ? "text-[#712CDC]" : "text-gray-400"
+            className={`relative flex flex-1 flex-col items-center justify-center gap-1 rounded-[18px] py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              isActive ? "text-brand" : "text-gray-400"
             }`}
             style={
               isActive
@@ -49,7 +49,7 @@ export function BottomNav({ activeItem = "shop", onNavigate = () => {} }) {
             {isActive ? (
               <span
                 aria-hidden="true"
-                className="absolute -top-[3px] left-1/2 h-[3px] w-8 -translate-x-1/2 rounded-full bg-[#712CDC]"
+                className="absolute -top-[3px] left-1/2 h-[3px] w-8 -translate-x-1/2 rounded-full bg-brand"
               />
             ) : null}
             <Icon

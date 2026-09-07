@@ -2,7 +2,7 @@
  * Keeps labels and state values paired in one typed source so adding the
  * Marketplace tab cannot introduce mismatched navigation values.
  */
-export const SHOP_TABS = [
+const SHOP_TABS = [
   { value: "top-brands", label: "Top Brands" },
   { value: "nearby-stores", label: "Nearby Stores" },
   { value: "marketplace", label: "Marketplace" },
@@ -19,7 +19,7 @@ export function ShopTabs({
   return (
     <div
       aria-label="Shop sections"
-      className="grid grid-cols-3 rounded-full border border-[#ece5ff] bg-[#f5f0ff] p-1.5 shadow-[0_1px_3px_rgba(113,44,220,0.06)]"
+      className="grid grid-cols-3 rounded-full border border-brand-border bg-brand-light p-1.5 shadow-[0_1px_3px_rgba(113,44,220,0.06)]"
       role="tablist"
     >
       {SHOP_TABS.map((tab) => {
@@ -30,9 +30,9 @@ export function ShopTabs({
             key={tab.value}
             aria-controls={`${tab.value}-panel`}
             aria-selected={isActive}
-            className={`relative min-w-0 whitespace-nowrap rounded-full px-[10px] py-[10px] text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC] ${
+            className={`relative min-w-0 whitespace-nowrap rounded-full px-[10px] py-[10px] text-[13px] font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
   isActive
-    ? "bg-white text-[#712CDC] shadow-[0_1px_3px_rgba(20,14,50,0.10),0_0_0_1px_rgba(113,44,220,0.08)]"
+    ? "bg-white text-brand shadow-[0_1px_3px_rgba(20,14,50,0.10),0_0_0_1px_rgba(113,44,220,0.08)]"
     : "text-gray-500"
 }`}
             id={`${tab.value}-tab`}
@@ -44,7 +44,7 @@ export function ShopTabs({
             {isActive ? (
               <span
                 aria-hidden="true"
-                className="absolute bottom-1.5 left-1/2 h-[2.5px] w-[22px] -translate-x-1/2 rounded-full bg-[#712CDC]"
+                className="absolute bottom-1.5 left-1/2 h-[2.5px] w-[22px] -translate-x-1/2 rounded-full bg-brand"
               />
             ) : null}
           </button>

@@ -19,7 +19,7 @@ export function ProductCard({ product, onSelect }) {
   return (
     <button
       aria-label={`View ${product.name}`}
-      className="flex w-full cursor-pointer items-center gap-3 rounded-[18px] border border-zinc-200 bg-white p-3.5 text-left shadow-[0_2px_6px_rgba(20,14,50,0.04)] transition-shadow hover:shadow-[0_6px_16px_rgba(20,14,50,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC]"
+      className="flex w-full cursor-pointer items-center gap-3 rounded-[18px] border border-zinc-200 bg-white p-3.5 text-left shadow-[0_2px_6px_rgba(20,14,50,0.04)] transition-shadow hover:shadow-[0_6px_16px_rgba(20,14,50,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
       type="button"
       onClick={() => onSelect(product.id)}
     >

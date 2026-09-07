@@ -22,7 +22,7 @@ export function MarketplaceError({ message, onRetry }) {
         {message}
       </p>
       <button
-        className="mt-4 rounded-full bg-[#712CDC] px-4 py-2 text-sm font-semibold tracking-[-0.005em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC]"
+        className="mt-4 rounded-full bg-brand px-4 py-2 text-sm font-semibold tracking-[-0.005em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
         type="button"
         onClick={onRetry}
       >

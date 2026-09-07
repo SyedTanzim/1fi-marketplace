@@ -24,9 +24,9 @@ export function VariantSelector({
                 variant.isAvailable ? "" : ", unavailable"
               }`}
               aria-pressed={isSelected}
-              className={`rounded-full border px-4 py-2 text-[13px] leading-[1.45] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC] disabled:cursor-not-allowed disabled:opacity-50 ${
+              className={`rounded-full border px-4 py-2 text-[13px] leading-[1.45] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand disabled:cursor-not-allowed disabled:opacity-50 ${
                 isSelected
-                  ? "border-[#712CDC] bg-[#f5f0ff] text-[#712CDC]"
+                  ? "border-brand bg-brand-light text-brand"
                   : "border-zinc-200 bg-white text-gray-500"
               }`}
               disabled={!variant.isAvailable}

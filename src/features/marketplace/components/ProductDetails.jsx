@@ -23,7 +23,7 @@ export function ProductDetails({ product, onBack, onProceed }) {
       <header className="flex items-center gap-3">
         <button
           aria-label="Back to Marketplace products"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC]"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
           type="button"
           onClick={onBack}
         >
@@ -91,7 +91,7 @@ export function ProductDetails({ product, onBack, onProceed }) {
       </div>
 
       <button
-        className="w-full rounded-full bg-[#712CDC] px-4 py-3 text-sm font-semibold tracking-[-0.005em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC] disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-full bg-brand px-4 py-3 text-sm font-semibold tracking-[-0.005em] text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand disabled:cursor-not-allowed disabled:opacity-50"
         disabled={!canProceed}
         type="button"
         onClick={() =>

@@ -22,7 +22,7 @@ function App() {
 
       {confirmedSelection ? (
         <div
-          className="fixed inset-x-4 bottom-24 z-50 mx-auto max-w-[468px] rounded-[18px] border border-[#ece5ff] bg-white p-3.5 text-center shadow-[0_8px_32px_rgba(20,14,50,0.12)]"
+          className="fixed inset-x-4 bottom-24 z-50 mx-auto max-w-[468px] rounded-[18px] border border-brand-border bg-white p-3.5 text-center shadow-[0_8px_32px_rgba(20,14,50,0.12)]"
           role="status"
         >
           <p className="text-[13px] leading-[1.45] text-gray-900">

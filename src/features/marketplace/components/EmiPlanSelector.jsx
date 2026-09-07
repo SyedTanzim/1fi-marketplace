@@ -19,9 +19,9 @@ export function EmiPlanSelector({ plans, selectedPlanId, onSelect }) {
             <button
               key={plan.id}
               aria-pressed={isSelected}
-              className={`flex w-full items-center justify-between gap-3 rounded-[18px] border p-3.5 text-left shadow-[0_2px_6px_rgba(20,14,50,0.04)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#712CDC] ${
+              className={`flex w-full items-center justify-between gap-3 rounded-[18px] border p-3.5 text-left shadow-[0_2px_6px_rgba(20,14,50,0.04)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 isSelected
-                  ? "border-[#712CDC] bg-[#f5f0ff]"
+                  ? "border-brand bg-brand-light"
                   : "border-zinc-200 bg-white"
               }`}
               type="button"
