@@ -4,8 +4,18 @@ export const MOCK_MARKETPLACE_PRODUCTS = [
     name: "iPhone 16",
     description: "Powerful everyday performance with an advanced camera system.",
     imageUrl:
-      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNFI3D2Pxk2fB16B3CR59xxd3IqHKsHvI5jcCIMOkzteu3nl8Iev-FP60&s=10",
     startingPrice: { amount: 79_900, currency: "INR" },
+    pickupLocation: {
+      name: "Imagine Apple Premium Reseller",
+      address:
+        "Shop G-14, DLF Mega Mall, Golf Course Road, Sector 28, Gurugram",
+      distance: "2.4 km away",
+      hours: "Open today, 10:30 AM - 9:30 PM",
+      pickupWindow: "Pickup available in 45 minutes",
+      phone: "+91 98710 42016",
+      note: "Carry a valid ID and complete the 1Fi checkout before pickup.",
+    },
     variants: [
       {
         id: "iphone-16-black",
@@ -45,8 +55,18 @@ export const MOCK_MARKETPLACE_PRODUCTS = [
     name: "Wireless Headphones",
     description: "Immersive over-ear audio with active noise cancellation.",
     imageUrl:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvcwZDGpU_6yMCGxSNknYzvq0X2O3ezK07wiGRADCV9CYVJQEEcuXqN_A&s=10",
     startingPrice: { amount: 24_990, currency: "INR" },
+    pickupLocation: {
+      name: "Croma Audio & Gadgets",
+      address:
+        "Unit 21, Ambience Mall, NH-48, DLF Phase 3, Gurugram",
+      distance: "4.1 km away",
+      hours: "Open today, 11:00 AM - 10:00 PM",
+      pickupWindow: "Pickup available today after 6:00 PM",
+      phone: "+91 98102 77145",
+      note: "Store team will keep the selected colour aside for 24 hours.",
+    },
     variants: [
       {
         id: "wireless-headphones-black",
@@ -86,8 +106,18 @@ export const MOCK_MARKETPLACE_PRODUCTS = [
     name: "Smartwatch",
     description: "Fitness, health, and daily notifications on your wrist.",
     imageUrl:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLvp7IfJuCiXYr9QD8uKt_AUULZ9Ass3oaCElpv-U-Tx1e6rZGfkHRZSc9&s=10",
     startingPrice: { amount: 19_990, currency: "INR" },
+    pickupLocation: {
+      name: "Reliance Digital Watch Studio",
+      address:
+        "First Floor, MGF Metropolitan Mall, MG Road, Sector 25, Gurugram",
+      distance: "3.2 km away",
+      hours: "Open today, 10:00 AM - 9:00 PM",
+      pickupWindow: "Pickup available in 2 hours",
+      phone: "+91 99990 18422",
+      note: "A specialist can help with setup, strap sizing, and pairing.",
+    },
     variants: [
       {
         id: "smartwatch-graphite",

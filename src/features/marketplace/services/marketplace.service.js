@@ -9,11 +9,9 @@ function wait(milliseconds) {
  * source later without forcing changes in hooks or UI components.
  */
 export async function getMarketplaceProducts() {
-  await wait(600);
-
   await wait(200);
 
-  if (Math.random() < 0.05) {
+  if (Math.random() < 0.005) {
     throw new Error("Unable to load marketplace products. Please try again.");
   }
 
